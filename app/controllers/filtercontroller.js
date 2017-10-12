@@ -54,13 +54,8 @@ angular.module('app').controller('filterController', ['filterService','$log',fun
 
     vm.getNamesByPage = function(pageNumber)
     {
-        filterService.getNamesByPage(pageNumber)
-        .then(function(data){
-            updateModel(data);
-        })
-        .catch(function(error){
-            $log.log('error occured.')
-        });
+        var data = filterService.getNamesByPage(pageNumber)
+        updateModel(data);
     }
 
     vm.getshowMore = function()
