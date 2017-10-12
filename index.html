@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app/assets/css/sprite-images.css" />
+    <link rel="stylesheet/less" type="text/css" href="app/assets/less/flex.less" />
+    <link rel="stylesheet/less" type="text/css" href="app/assets/less/style.less" />
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <script type="text/javascript" src="bower_components/prefix-free/prefixfree.js"></script>
+    <script type="text/javascript" src="bower_components/less/dist/less.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular.js/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular.less/angular.less.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers/filtercontroller.js"></script>
+    <script type="text/javascript" src="app/services/filterservice.js"></script>
+</head>
+
+<body class="search">
+    <div class="container search__container" ng-controller="filterController as vm">
+        <div class="row search__nomargin search__searchtopmenu flexcontainer flexcontainer__veritcalcenter">
+            <img  class="leftcollapsemenu search__topcollapsemenu" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            />
+            <div class="flexcontainer__flexitem">
+            </div>
+            <img class="searchmenu" ng-click="vm.openSearchSection()" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+            <img class="profilephoto search__header-profile-photo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            />
+         </div>
+        <div ng-if="vm.searchOpen" class="row search__nomargin search__filtersection flexcontainer flexcontainer__veritcalcenter">
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+                    <button id="single-button" type="button" class="btn btn-default search__dropdown search__noradius" uib-dropdown-toggle ng-disabled="disabled">
+                      Content <span class="caret"></span>
+                    </button>
+                    <!-- <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                      <li role="menuitem"><a href="#">Action</a></li>
+                      <li role="menuitem"><a href="#">Another action</a></li>
+                      <li role="menuitem"><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li role="menuitem"><a href="#">Separated link</a></li>
+                    </ul> -->
+                  </div>
+            <input type="text" class="form-control flexcontainer__flexitem search__noradius" placeholder="search" />
+            <button class="btn btn-default search__go search__noradius">Go!</button>
+        </div>
+        <div class="row search__header text-center search__nomargin">
+            <span>
+                <img class="passport" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+            </span>
+            <span>
+                <img class="projects" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+            </span>
+            <span>
+                <img class="workgroup" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+            </span>
+            <span>
+                <img class="roleprofiles" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+            </span>
+            <span>
+                <img class="communities" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+            </span>
+         </div>
+        <div class="row search__subheader search__nomargin flexcontainer">
+            <div class="search__subheader__subheadericon">
+                <img class="search__toplogo" src="app/assets/images/top-header-logo.png" />
+            </div>
+            <div class="search__subheader__hedertext flexcontainer__flexitem">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+                of Lorem Ipsum
+            </div>
+            <div class="search__subheader__settings">
+                <span dropdown>
+                    <img dropdown-toggle class="settings" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    />
+                    <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                        <li>
+                            Menu1
+                        </li>
+                        <li>
+                            Menu2
+                        </li>
+                        <li>
+                            Menu3
+                        </li>
+                    </ul>
+                </span>
+            </div>
+         </div>
+        <div class="container">
+            <div class="row search__nomargin search__filtersection flexcontainer flexcontainer__veritcalcenter">
+                <input type="text" class="form-control search__searchName" ng-model="vm.searchText" placeholder="enter name" ng-change="vm.getNamesByText()"
+                />
+                <div class="flexcontainer__flexitem">
+                    <span class="search__filterchar" ng-repeat="filterChar in vm.getFilterChars()">
+                        <span ng-class="vm.selectedChar === filterChar ? 'search__selectedChar' : ''">
+                            <a href="#" ng-click="vm.getNamesByFilter(filterChar)">{{filterChar}}</a>
+                        </span>
+                    </span>
+                </div>
+                <img class="plane" tooltip-placement="top" uib-tooltip="Email selected members" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                />
+            </div>
+            <div class="row search__nomargin flexcontainer flexcontainer__wrap" ng-if="vm.userProfiles.length >0">
+                <div class="search__profile" ng-repeat="userProfile in vm.userProfiles">
+                    <div class="flexcontainer">
+                        <div class="search__photocontainer" ng-class="userProfile.nm == vm.selectedName ? 'search__selectedState' : ''">
+                            <img class="passport search__profile__photo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            />
+                            <div class="search__selectPhoto" ng-class="userProfile.nm == vm.selectedName ? 'search__selectedState' : ''">
+                                <input type="checkbox" ng-click="vm.selectedPhoto(userProfile.nm)" />
+                            </div>
+                        </div>
+                        <div class="flexcontainer__flexitem">
+                            <div class="search__profile__name">{{userProfile.nm}}</div>
+                            <div class="search__profile__email">{{userProfile.email}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" ng-if="vm.userProfiles.length == 0">{{vm.errorMessage}}</div>
+            <div class="text-center">
+                <button class="btn btn-info search__showmore" ng-if="vm.pageNumber >= 0" ng-click="vm.getshowMore()">Show More</button>
+            </div>
+         </div>
+    </div>
+</body>
+</html>

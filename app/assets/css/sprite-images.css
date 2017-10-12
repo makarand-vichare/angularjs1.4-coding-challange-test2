@@ -1,0 +1,65 @@
+.passport {
+    background: url(imgs/css_sprites.png) no-repeat -294px -49px;
+    width: 65px;
+    height: 68px;
+}
+
+.projects {
+	background: url(imgs/css_sprites.png) no-repeat -219px -47px;
+    width: 65px;
+    height: 68px;
+}
+
+.workgroup {
+    background: url(imgs/css_sprites.png) no-repeat -146px -48px;
+    width: 65px;
+    height: 68px;
+}
+
+.roleprofiles {
+	background: url(imgs/css_sprites.png) no-repeat -448px -48px;
+    width: 65px;
+    height: 68px;
+}
+
+.communities {
+    background: url(imgs/css_sprites.png) no-repeat -372px -49px;
+    width: 69px;
+    height: 68px;
+}
+
+.plane {
+	background: url('imgs/css_sprites.png') no-repeat -292px  0px;
+	width: 44px;
+	height: 42px;
+}
+
+.settings {
+	background: url('imgs/sprite.png') no-repeat -590px -50px;
+	width: 36px;
+	height: 36px;
+}
+
+.topicon {
+	background: url('imgs/sprite.png') no-repeat -451px -130px;
+	width: 348px;
+	height: 337px;
+}
+
+.leftcollapsemenu {
+	background: url('imgs/sprite.png') no-repeat 0 -64px;
+	width: 43px;
+    height: 37px;
+}
+
+.searchmenu {
+	background: url('imgs/sprite.png') no-repeat -650px -50px;
+	width: 42px;
+	height: 43px;
+}
+
+.profilephoto {
+    background: url(imgs/css_sprites.png) no-repeat -302px -52px;
+    width: 65px;
+    height: 68px;
+}
